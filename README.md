@@ -10,7 +10,7 @@
 - tkinter
 
 #説明書
-- No.2.pyをひらいてコードをコピーする。
+- No2.pyをひらいてコードをコピーする。
 - Visual studio codeを開く。
 - Visual studio code内でファイル＞新しいテキストファイルへいってクリックする。
 - コピーしたコードをVisual studio code内に貼り付けする。
