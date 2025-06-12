@@ -1,13 +1,13 @@
 # No2.osero
 #開発環境
 - 動作プラットフォーム
-- WIN11
+- **WIN11**
 - 開発プラットフォーム
-- Visual studio code
+- **Visual studio code**
 - 開発言語
-- Python
+- **Python**
 - 利用ライブラリ
-- tkinter
+- **tkinter**
 
 #説明書
 - **No2.py**をひらいてコードを**コピー**する。
