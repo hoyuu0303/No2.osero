@@ -43,7 +43,12 @@ class OthelloGame:
             self.current_player = 'white' if self.current_player == 'black' else 'black'
             self.draw_board()
             if not self.has_valid_moves(self.current_player):
-             self.end_game()
+             # 次の手番の合法手があるかチェック
+             self.pass_turn()
+              #  盤面が満杯ならゲーム終了
+             if self.is_board_full():
+               self.end_game()
+               return
 
     def is_valid_move(self, row, col, color):
         if self.board[row][col] != '':
@@ -108,6 +113,15 @@ class OthelloGame:
             winner = "引き分け"
         messagebox.showinfo("ゲーム終了", f"白: {white_count} 石\n黒: {black_count} 石\n勝者: {winner}")
         self.master.quit()
+    def pass_turn(self):
+    # 合法手がないので手番を交代
+      self.current_player = 'white' if self.current_player == 'black' else 'black'
+    # 次のプレイヤーにも手がなければゲーム終了
+      if not self.has_valid_moves(self.current_player):
+          self.end_game()
+      else:
+          messagebox.showinfo("パス", f"{self.current_player} のターンへパスします")
+
 
 if __name__ == "__main__":
     root = tk.Tk()
