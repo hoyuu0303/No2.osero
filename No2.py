@@ -53,10 +53,10 @@ class OthelloGame:
     def is_valid_move(self, row, col, color):
         if self.board[row][col] != '':
             return False
-        opponent = 'white' if color == 'black' else 'black'
-        directions = [(-1, -1), (-1, 0), (-1, 1),
-                      (0, -1),         (0, 1),
-                      (1, -1),  (1, 0), (1, 1)]
+        opponent = 'white' if color == 'black' else 'black'#挟んで反転させる判定
+        directions = [(-1, -1), (-1, 0), (-1, 1),#左上方向（斜め上左）,上方向（縦方向）,右上方向（斜め上右）
+                      (0, -1),         (0, 1),   #左方向（横方向）,右方向（横方向）
+                      (1, -1),  (1, 0), (1, 1)]  #左下方向（斜め下左）,下方向（縦方向）,右下方向（斜め下右）
         for dr, dc in directions:
             r, c = row + dr, col + dc
             has_opponent_between = False
