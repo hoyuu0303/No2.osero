@@ -60,7 +60,7 @@ class OthelloGame:
         for dr, dc in directions:
             r, c = row + dr, col + dc
             has_opponent_between = False
-            while 0 <= r < self.board_size and 0 <= c < self.board_size:
+            while 0 <= r < self.board_size and 0 <= c < self.board_size:#指定した方向に沿って移動しながら相手の石を挟むことができるかをチェック
                 if self.board[r][c] == opponent:
                     has_opponent_between = True
                 elif self.board[r][c] == color:
@@ -72,11 +72,11 @@ class OthelloGame:
                     break
                 r += dr
                 c += dc
-        return False
+        return False#失敗時返す
 
     def place_piece(self, row, col, color):
         self.board[row][col] = color
-        opponent = 'white' if color == 'black' else 'black'
+        opponent = 'white' if color == 'black' else 'black'#挟んで反転させる判定
         directions = [(-1, -1), (-1, 0), (-1, 1),
                       (0, -1),         (0, 1),
                       (1, -1),  (1, 0), (1, 1)]
